@@ -1,0 +1,31 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build and test",
+			"type": "shell",
+			"command": "dotnet build atc-lite.sln && dotnet test atc-lite.sln",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "build .NET solution",
+			"type": "shell",
+			"command": "dotnet build atc-lite.sln",
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": "build"
+		},
+		{
+			"label": "build .NET solution",
+			"type": "shell",
+			"command": "dotnet build atc-lite.sln",
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": "build"
+		}
+	]
+}

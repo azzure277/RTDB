@@ -42,3 +42,8 @@ c:\Users\brand\source\repos\RTDB Project\atc-lite\src\Ingest.Sim\obj\Debug\net8.
 c:\Users\brand\source\repos\RTDB Project\atc-lite\src\Ingest.Sim\obj\Debug\net8.0\Ingest.Sim.pdb
 c:\Users\brand\source\repos\RTDB Project\atc-lite\src\Ingest.Sim\obj\Debug\net8.0\Ingest.Sim.genruntimeconfig.cache
 c:\Users\brand\source\repos\RTDB Project\atc-lite\src\Ingest.Sim\obj\Debug\net8.0\ref\Ingest.Sim.dll
+C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Ingest.Sim\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Ingest.Sim\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Ingest.Sim\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Ingest.Sim\bin\Debug\net8.0\StackExchange.Redis.dll
+C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Ingest.Sim\bin\Debug\net8.0\System.IO.Pipelines.dll

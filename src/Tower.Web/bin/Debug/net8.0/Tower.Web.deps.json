@@ -9,7 +9,7 @@
       "Tower.Web/1.0.0": {
         "dependencies": {
           "Shared": "1.0.0",
-          "StackExchange.Redis": "2.7.33",
+          "StackExchange.Redis": "2.9.17",
           "Swashbuckle.AspNetCore": "9.0.4"
         },
         "runtime": {
@@ -17,7 +17,12 @@
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/8.0.0": {},
-      "Microsoft.Extensions.Logging.Abstractions/6.0.0": {},
+      "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {},
+      "Microsoft.Extensions.Logging.Abstractions/8.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+        }
+      },
       "Microsoft.OpenApi/1.6.25": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
@@ -37,15 +42,15 @@
           }
         }
       },
-      "StackExchange.Redis/2.7.33": {
+      "StackExchange.Redis/2.9.17": {
         "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
           "Pipelines.Sockets.Unofficial": "2.2.8"
         },
         "runtime": {
-          "lib/net6.0/StackExchange.Redis.dll": {
+          "lib/net8.0/StackExchange.Redis.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.7.33.41805"
+            "fileVersion": "2.9.17.8862"
           }
         }
       },
@@ -111,12 +116,19 @@
       "path": "microsoft.extensions.apidescription.server/8.0.0",
       "hashPath": "microsoft.extensions.apidescription.server.8.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Logging.Abstractions/6.0.0": {
+    "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/HggWBbTwy8TgebGSX5DBZ24ndhzi93sHUBDvP1IxbZD7FDokYzdAr6+vbWGjw2XAfR2EJ1sfKUotpjHnFWPxA==",
-      "path": "microsoft.extensions.logging.abstractions/6.0.0",
-      "hashPath": "microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512"
+      "sha512": "sha512-cjWrLkJXK0rs4zofsK4bSdg+jhDLTaxrkXu4gS6Y7MAlCvRyNNgwY/lJi5RDlQOnSZweHqoyvgvbdvQsRIW+hg==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/8.0.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.Abstractions/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-arDBqTgFCyS0EvRV7O3MZturChstm50OJ0y9bDJvAcmEPJm0FFpFyjU/JLYyStNGGey081DvnQYlncNX5SJJGA==",
+      "path": "microsoft.extensions.logging.abstractions/8.0.0",
+      "hashPath": "microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512"
     },
     "Microsoft.OpenApi/1.6.25": {
       "type": "package",
@@ -132,12 +144,12 @@
       "path": "pipelines.sockets.unofficial/2.2.8",
       "hashPath": "pipelines.sockets.unofficial.2.2.8.nupkg.sha512"
     },
-    "StackExchange.Redis/2.7.33": {
+    "StackExchange.Redis/2.9.17": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2kCX5fvhEE824a4Ab5Imyi8DRuGuTxyklXV01kegkRpsWJcPmO6+GAQ+HegKxvXAxlXZ8yaRspvWJ8t3mMClfQ==",
-      "path": "stackexchange.redis/2.7.33",
-      "hashPath": "stackexchange.redis.2.7.33.nupkg.sha512"
+      "sha512": "sha512-Enpv0bfMP6SRownWx1CmaHantT9626Z6QSdHOidKlm0zLrBaPe7ueQf5phJH6Zkf3lDe5rr6JvXAgEP1ogijug==",
+      "path": "stackexchange.redis/2.9.17",
+      "hashPath": "stackexchange.redis.2.9.17.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/9.0.4": {
       "type": "package",

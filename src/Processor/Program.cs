@@ -8,8 +8,10 @@ await Host.CreateDefaultBuilder(args)
     .ConfigureAppConfiguration(cfg => cfg.AddJsonFile("appsettings.json", optional: true))
     .ConfigureServices((ctx, services) =>
     {
-        services.AddSingleton<IConnectionMultiplexer>(sp => ConnectionMultiplexer.Connect(ctx.Configuration["Redis:ConnectionString"]!));
-        services.AddHostedService<Worker>();
+    services.AddSingleton<IConnectionMultiplexer>(sp => ConnectionMultiplexer.Connect(ctx.Configuration["Redis:ConnectionString"]!));
+    services.AddSingleton<Shared.Infrastructure.ITrafficRepository, Shared.Infrastructure.RedisTrafficRepository>();
+    services.AddHostedService<Worker>();
+    services.AddHostedService<Processor.SequenceWorker>();
     })
     .ConfigureLogging(l => l.AddSimpleConsole(o => { o.SingleLine = true; o.TimestampFormat = "HH:mm:ss "; }))
     .RunConsoleAsync();

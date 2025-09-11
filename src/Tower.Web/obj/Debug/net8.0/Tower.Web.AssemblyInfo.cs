@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tower.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65392c1d1716df42c467193799b6d844772102bb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0edf2d83863be56729a7c6723913a3787749e3a2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tower.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tower.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

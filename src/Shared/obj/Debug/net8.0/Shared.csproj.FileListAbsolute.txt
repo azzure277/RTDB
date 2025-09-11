@@ -10,3 +10,4 @@ C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Shared\obj\Debug\net8.0\Sh
 C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Shared\obj\Debug\net8.0\refint\Shared.dll
 C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Shared\obj\Debug\net8.0\Shared.pdb
 C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Shared\obj\Debug\net8.0\ref\Shared.dll
+C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Shared\obj\Debug\net8.0\Shared.csproj.AssemblyReference.cache
