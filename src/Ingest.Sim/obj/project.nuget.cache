@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SY3bxZZgj+k=",
+  "dgSpecHash": "TIQcYkmWRfI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\brand\\source\\repos\\RTDB Project\\atc-lite\\src\\Ingest.Sim\\Ingest.Sim.csproj",
+  "projectFilePath": "C:\\Users\\brand\\source\\repos\\RTDB Project\\src\\Ingest.Sim\\Ingest.Sim.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\brand\\.nuget\\packages\\confluent.kafka\\2.5.3\\confluent.kafka.2.5.3.nupkg.sha512",
     "C:\\Users\\brand\\.nuget\\packages\\librdkafka.redist\\2.5.3\\librdkafka.redist.2.5.3.nupkg.sha512",

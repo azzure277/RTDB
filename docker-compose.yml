@@ -4,6 +4,28 @@ services:
     image: redis:7
     ports:
       - "6379:6379"
+  
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: true
+    ports:
+      - "9092:9092"
+    depends_on:
+      - zookeeper
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+
   api:
     build:
       context: .
@@ -14,11 +36,42 @@ services:
       - "5000:8080"
     depends_on:
       - redis
+
   processor:
     build:
       context: .
       dockerfile: Dockerfile.processor
     environment:
       - ConnectionStrings__Redis=redis:6379
+      - KAFKA=kafka:9092
+      - TOPIC=aircraft.position
     depends_on:
       - redis
+      - kafka
+
+  ingest-opensky:
+    build:
+      context: .
+      dockerfile: Dockerfile.opensky
+    environment:
+      - KAFKA=kafka:9092
+      - TOPIC=aircraft.position
+      - INTERVAL_SECONDS=30
+      - REGION=SFO
+    depends_on:
+      - kafka
+    restart: unless-stopped
+
+  ingest-sim:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    environment:
+      - KAFKA=kafka:9092
+      - TOPIC=aircraft.position
+      - RATE_HZ=1
+      - COUNT=3
+    depends_on:
+      - kafka
+    restart: unless-stopped
+    profiles: ["simulation"]

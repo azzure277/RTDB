@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brand\\source\\repos\\RTDB Project\\atc-lite\\src\\Shared\\Shared.csproj": {}
+    "C:\\Users\\brand\\source\\repos\\RTDB Project\\src\\Shared\\Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brand\\source\\repos\\RTDB Project\\atc-lite\\src\\Shared\\Shared.csproj": {
+    "C:\\Users\\brand\\source\\repos\\RTDB Project\\src\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brand\\source\\repos\\RTDB Project\\atc-lite\\src\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\brand\\source\\repos\\RTDB Project\\src\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\brand\\source\\repos\\RTDB Project\\atc-lite\\src\\Shared\\Shared.csproj",
+        "projectPath": "C:\\Users\\brand\\source\\repos\\RTDB Project\\src\\Shared\\Shared.csproj",
         "packagesPath": "C:\\Users\\brand\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brand\\source\\repos\\RTDB Project\\atc-lite\\src\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\brand\\source\\repos\\RTDB Project\\src\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

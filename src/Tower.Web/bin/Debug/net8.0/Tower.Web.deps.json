@@ -94,6 +94,9 @@
       },
       "System.IO.Pipelines/5.0.1": {},
       "Shared/1.0.0": {
+        "dependencies": {
+          "StackExchange.Redis": "2.9.17"
+        },
         "runtime": {
           "Shared.dll": {
             "assemblyVersion": "1.0.0.0",

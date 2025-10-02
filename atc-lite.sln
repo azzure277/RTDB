@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Processor", "src/Processor/
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tower.Web", "src/Tower.Web/Tower.Web.csproj", "{FF0B7E2E-6A7E-43D3-BE8D-182B0E2E1B77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ingest.OpenSky", "src/Ingest.OpenSky/Ingest.OpenSky.csproj", "{2C8E9B7A-4F1E-4A2B-8D3C-5F6E7B8C9D0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,11 @@ Global
 		{A4A5E332-3811-49F9-8A56-EA0F521F6B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF0B7E2E-6A7E-43D3-BE8D-182B0E2E1B77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FF0B7E2E-6A7E-43D3-BE8D-182B0E2E1B77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF0B7E2E-6A7E-43D3-BE8D-182B0E2E1B77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF0B7E2E-6A7E-43D3-BE8D-182B0E2E1B77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C8E9B7A-4F1E-4A2B-8D3C-5F6E7B8C9D0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C8E9B7A-4F1E-4A2B-8D3C-5F6E7B8C9D0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C8E9B7A-4F1E-4A2B-8D3C-5F6E7B8C9D0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C8E9B7A-4F1E-4A2B-8D3C-5F6E7B8C9D0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
