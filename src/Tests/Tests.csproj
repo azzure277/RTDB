@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="NSubstitute" Version="5.3.0" />
+		<PackageReference Include="xunit" Version="2.5.6" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.5.6" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Shared\Shared.csproj" />
+		<ProjectReference Include="..\Processor\Processor.csproj" />
+		<ProjectReference Include="..\Ingest.Sim\Ingest.Sim.csproj" />
+	</ItemGroup>
+</Project>

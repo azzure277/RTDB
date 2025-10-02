@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ATC-Lite Tower</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,Arial;max-width:1100px;margin:24px auto;padding:0 16px}
+    h1{margin:0 0 12px} .muted{color:#666}
+    table{border-collapse:collapse;width:100%}
+    th,td{padding:8px;border-bottom:1px solid #eee;text-align:left}
+    .badge{display:inline-block;padding:2px 8px;border-radius:12px;background:#eee}
+  </style>
+</head>
+<body>
+  <h1>ATC‑Lite Tower <span id="airport" class="badge"></span></h1>
+  <div class="muted">Live 10 NM ring • updates every ~1s</div>
+
+  <h3>Landing Sequence</h3>
+  <ol id="seq"></ol>
+
+  <h3>Traffic (10 NM)</h3>
+  <table>
+    <thead><tr><th>Flight</th><th>ICAO24</th><th>Dist (NM)</th><th>Alt (ft)</th><th>GS (kt)</th><th>Fuel (kg)</th><th>Lat</th><th>Lon</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+<script src="/signalr-client.js"></script>
+<script>
+async function tick(){
+  const r = await fetch('/api/state');
+  const j = await r.json();
+  document.getElementById('airport').textContent = j.airport + ' @ ' + new Date(j.tsUtc).toLocaleTimeString();
+  const seq = document.getElementById('seq'); seq.innerHTML = '';
+  j.sequence.forEach(s=>{ const li = document.createElement('li'); li.textContent = s; seq.appendChild(li); });
+  const rows = document.getElementById('rows'); rows.innerHTML = '';
+  j.positions.sort((a,b)=>a.DistNm - b.DistNm).forEach(p=>{
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${p.Flight}</td><td>${p.Icao24}</td><td>${p.DistNm?.toFixed(2) ?? ''}</td><td>${p.AltFt}</td><td>${p.GsKt}</td><td>${p.FuelKg}</td><td>${p.Lat.toFixed(4)}</td><td>${p.Lon.toFixed(4)}</td>`;
+    rows.appendChild(tr);
+  });
+}
+setInterval(tick, 1000); tick();
+</script>
+</body>
+</html>

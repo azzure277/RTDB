@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    environment:
+      - ConnectionStrings__Redis=redis:6379
+    ports:
+      - "5000:8080"
+    depends_on:
+      - redis
+  processor:
+    build:
+      context: .
+      dockerfile: Dockerfile.processor
+    environment:
+      - ConnectionStrings__Redis=redis:6379
+    depends_on:
+      - redis
