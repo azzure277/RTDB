@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ATC-Lite Tower</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,Arial;max-width:1100px;margin:24px auto;padding:0 16px}
+    h1{margin:0 0 12px} .muted{color:#666}
+    table{border-collapse:collapse;width:100%}
+    th,td{padding:8px;border-bottom:1px solid #eee;text-align:left}
+    .badge{display:inline-block;padding:2px 8px;border-radius:12px;background:#eee}
+    @media (max-width: 700px) {
+      body{padding:0 2vw;}
+      table, thead, tbody, th, td, tr {display:block;}
+      th,td{padding:6px 4px;}
+      tr{margin-bottom:10px;}
+    }
+  </style>
+</head>
+<body>
+  <h1>ATC‑Lite Tower <span id="airport" class="badge"></span></h1>
+  <div class="muted">Live 10 NM ring • updates every ~1s</div>
+
+
+
+  <div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px;align-items:center">
+    <div>
+      <label for="runwayFilter">Runway:</label>
+      <select id="runwayFilter"><option value="">All</option></select>
+    </div>
+    <div>
+      <label for="wakeFilter">Wake:</label>
+      <select id="wakeFilter">
+        <option value="">All</option>
+        <option value="L">Light</option>
+        <option value="M">Medium</option>
+        <option value="H">Heavy</option>
+        <option value="J">Super</option>
+      </select>
+    </div>
+    <span id="alertBadge" class="badge" style="background:#fdd;color:#a00;display:none"></span>
+  </div>
+
+  <h3>Landing Sequence</h3>
+  <ol id="seq"></ol>
+
+  <h3>Traffic Map (10 NM)</h3>
+  <div id="map" style="height:400px;margin-bottom:24px;"></div>
+
+  <h3>Traffic (10 NM)</h3>
+  <table>
+    <thead><tr><th>Flight</th><th>ICAO24</th><th>Dist (NM)</th><th>Alt (ft)</th><th>GS (kt)</th><th>Fuel (kg)</th><th>Lat</th><th>Lon</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+<!-- <script src="/signalr-client.js"></script> -->
+<script>
+let map, markers = [];
+function initMap() {
+  map = L.map('map').setView([37.6189, -122.375], 12); // KSFO default
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
+  L.circle([37.6189, -122.375], {radius: 18520, color:'#0078d7', fill:false}).addTo(map); // 10 NM ring
+}
+function updateMap(positions) {
+  markers.forEach(m => map.removeLayer(m));
+  markers = positions.map(p => {
+    const marker = L.marker([p.lat, p.lon]).addTo(map);
+    marker.bindPopup(`<b>${p.flight}</b><br>Alt: ${p.altFt} ft<br>GS: ${p.gsKt} kt`);
+    return marker;
+  });
+}
+async function tick(){
+  const r = await fetch('/api/state?airport=KSFO');
+  const j = await r.json();
+  updateUI(j);
+}
+function updateUI(j) {
+  document.getElementById('airport').textContent = j.airport + ' @ ' + new Date(j.tsUtc).toLocaleTimeString();
+  const seq = document.getElementById('seq'); seq.innerHTML = '';
+  j.sequence.forEach(s=>{ const li = document.createElement('li'); li.textContent = s; seq.appendChild(li); });
+
+  // Populate runway filter if available
+  const runwayFilter = document.getElementById('runwayFilter');
+  if (j.positions && j.positions.length) {
+    const runways = Array.from(new Set(j.positions.map(p => p.icao).filter(Boolean)));
+    if (runwayFilter.options.length === 1 || runwayFilter.options.length !== runways.length+1) {
+      runwayFilter.innerHTML = '<option value="">All</option>' + runways.map(r=>`<option value="${r}">${r}</option>`).join('');
+    }
+  }
+
+  // Filtering
+  const selectedRunway = runwayFilter.value;
+  const selectedWake = document.getElementById('wakeFilter').value;
+  let filtered = j.positions;
+  if (selectedRunway) filtered = filtered.filter(p => p.icao === selectedRunway);
+  if (selectedWake) filtered = filtered.filter(p => (p.wakeCat||'').toUpperCase().startsWith(selectedWake));
+
+  const rows = document.getElementById('rows'); rows.innerHTML = '';
+  filtered.sort((a,b)=>a.distNm - b.distNm).forEach(p=>{
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${p.flight}</td><td>${p.icao24||p.icao||''}</td><td>${p.distNm?.toFixed(2) ?? ''}</td><td>${p.altFt}</td><td>${p.gsKt}</td><td>${p.fuelKg||''}</td><td>${p.lat.toFixed(4)}</td><td>${p.lon.toFixed(4)}</td>`;
+    rows.appendChild(tr);
+  });
+  updateMap(filtered);
+
+  // Hide alert badge for now (to be used for violations)
+  document.getElementById('alertBadge').style.display = 'none';
+}
+window.onload = () => { 
+  initMap();
+  // Always use polling for updates
+  tick();
+  setInterval(tick, 2000);
+};
+</script>
+</body>
+</html>

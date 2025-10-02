@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "SY3bxZZgj+k=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\brand\\source\\repos\\RTDB Project\\atc-lite\\src\\Ingest.Sim\\Ingest.Sim.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\brand\\.nuget\\packages\\confluent.kafka\\2.5.3\\confluent.kafka.2.5.3.nupkg.sha512",
+    "C:\\Users\\brand\\.nuget\\packages\\librdkafka.redist\\2.5.3\\librdkafka.redist.2.5.3.nupkg.sha512",
+    "C:\\Users\\brand\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\brand\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\brand\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "C:\\Users\\brand\\.nuget\\packages\\stackexchange.redis\\2.9.17\\stackexchange.redis.2.9.17.nupkg.sha512",
+    "C:\\Users\\brand\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

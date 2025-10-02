@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="15ebfa57-2480-4864-b570-718e69080b74" name="brand@MSI 2025-09-11 13:41:13" runUser="MSI\brand" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-09-11T13:41:13.5091400-07:00" queuing="2025-09-11T13:41:13.5091403-07:00" start="2025-09-11T13:41:12.6916269-07:00" finish="2025-09-11T13:41:13.5229937-07:00" />
+  <TestSettings name="default" id="9c07284d-1e5e-4fd1-a5a0-1b52854218ea">
+    <Deployment runDeploymentRoot="brand_MSI_2025-09-11_13_41_13" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="2143463b-5680-49cb-b9cc-751027ad2c6e" testId="5b22266c-5213-b841-925f-5fd22a721f73" testName="E2ETests.IngestAndStateFlow_WorksWithJwt" computerName="MSI" duration="00:00:00.0939418" startTime="2025-09-11T13:41:13.4095396-07:00" endTime="2025-09-11T13:41:13.4095612-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2143463b-5680-49cb-b9cc-751027ad2c6e">
+      <Output>
+        <ErrorInfo>
+          <Message>Ingest failed: BadRequest</Message>
+          <StackTrace>   at E2ETests.IngestAndStateFlow_WorksWithJwt() in C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Tests\E2ETests.cs:line 39&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="E2ETests.IngestAndStateFlow_WorksWithJwt" storage="c:\users\brand\source\repos\rtdb project\atc-lite\src\tests\bin\debug\net8.0\tests.dll" id="5b22266c-5213-b841-925f-5fd22a721f73">
+      <Execution id="2143463b-5680-49cb-b9cc-751027ad2c6e" />
+      <TestMethod codeBase="C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Tests\bin\Debug\net8.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="E2ETests" name="IngestAndStateFlow_WorksWithJwt" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="5b22266c-5213-b841-925f-5fd22a721f73" executionId="2143463b-5680-49cb-b9cc-751027ad2c6e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.5.6+bf9b858c26 (64-bit .NET 8.0.20)&#xD;
+[xUnit.net 00:00:00.08]   Discovering: Tests&#xD;
+[xUnit.net 00:00:00.13]   Discovered:  Tests&#xD;
+[xUnit.net 00:00:00.14]   Starting:    Tests&#xD;
+[xUnit.net 00:00:00.28]       Ingest failed: BadRequest&#xD;
+[xUnit.net 00:00:00.28]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.28]         C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Tests\E2ETests.cs(39,0): at E2ETests.IngestAndStateFlow_WorksWithJwt()&#xD;
+[xUnit.net 00:00:00.28]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:00.28]   Finished:    Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="MSI" outcome="Error" timestamp="2025-09-11T13:41:13.4075548-07:00">
+        <Text>[xUnit.net 00:00:00.28]     E2ETests.IngestAndStateFlow_WorksWithJwt [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

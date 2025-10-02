@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="3273ef06-937b-4429-b833-846dcc92f86b" name="brand@MSI 2025-09-11 13:34:34" runUser="MSI\brand" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-09-11T13:34:34.3340041-07:00" queuing="2025-09-11T13:34:34.3340046-07:00" start="2025-09-11T13:34:33.3497074-07:00" finish="2025-09-11T13:34:34.3388971-07:00" />
+  <TestSettings name="default" id="ef0a9799-26e9-4dcb-bff9-fb562e5f2267">
+    <Deployment runDeploymentRoot="brand_MSI_2025-09-11_13_34_34" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="94558c67-2378-482d-af55-80620cb082ed" testId="ff6333a2-eb1c-9c04-1e72-41f112ba5d6c" testName="SeparationTests.MinimaTable_IsCorrect(leader: Heavy, follower: Medium, expectedNm: 5)" computerName="MSI" duration="00:00:00.0000011" startTime="2025-09-11T13:34:34.1580718-07:00" endTime="2025-09-11T13:34:34.1580718-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="94558c67-2378-482d-af55-80620cb082ed" />
+    <UnitTestResult executionId="caf93a07-56ae-44d4-a77c-b8e221fdc1d9" testId="5a00afc5-163b-8be7-d4c7-07d5e41f9d1a" testName="SeparationTests.MinimaTable_IsCorrect(leader: Heavy, follower: Heavy, expectedNm: 4)" computerName="MSI" duration="00:00:00.0000013" startTime="2025-09-11T13:34:34.1580380-07:00" endTime="2025-09-11T13:34:34.1580380-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="caf93a07-56ae-44d4-a77c-b8e221fdc1d9" />
+    <UnitTestResult executionId="36637e97-585b-4948-8a0e-9b21c84ea3d8" testId="7edbec7d-2106-bd2c-7324-755da535f053" testName="SeparationTests.MinimaTable_IsCorrect(leader: Light, follower: Light, expectedNm: 3)" computerName="MSI" duration="00:00:00.0000094" startTime="2025-09-11T13:34:34.1579936-07:00" endTime="2025-09-11T13:34:34.1579937-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="36637e97-585b-4948-8a0e-9b21c84ea3d8" />
+    <UnitTestResult executionId="0f613e8a-b276-4af4-8b69-008aa76c57d6" testId="e0a3d6df-8d82-1082-c255-c2bdc547c399" testName="SeparationTests.MinimaTable_IsCorrect(leader: Medium, follower: Light, expectedNm: 5)" computerName="MSI" duration="00:00:00.0086583" startTime="2025-09-11T13:34:34.1548239-07:00" endTime="2025-09-11T13:34:34.1548446-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0f613e8a-b276-4af4-8b69-008aa76c57d6" />
+    <UnitTestResult executionId="9bdd3b42-9b10-4679-8707-70d033c45c07" testId="085d651a-9277-5430-04fb-503b0a462533" testName="StateEndpointTests.State_Returns_Empty_By_Default" computerName="MSI" duration="00:00:00.0833242" startTime="2025-09-11T13:34:34.2262862-07:00" endTime="2025-09-11T13:34:34.2262866-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9bdd3b42-9b10-4679-8707-70d033c45c07" />
+    <UnitTestResult executionId="6da2d5b1-872f-42b7-a98a-78e960ff30ce" testId="3846ff06-6f86-15ae-3484-f8d935ce8b8e" testName="SeparationTests.MinimaTable_IsCorrect(leader: Heavy, follower: Light, expectedNm: 6)" computerName="MSI" duration="00:00:00.0000011" startTime="2025-09-11T13:34:34.1581188-07:00" endTime="2025-09-11T13:34:34.1581188-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6da2d5b1-872f-42b7-a98a-78e960ff30ce" />
+    <UnitTestResult executionId="1a379c91-195d-4a58-9e13-ebf2d72bdcc7" testId="2a230cab-0313-ffee-c46e-9db819865322" testName="SeparationTests.MinimaTable_IsCorrect(leader: Medium, follower: Medium, expectedNm: 3)" computerName="MSI" duration="00:00:00.0003379" startTime="2025-09-11T13:34:34.1576886-07:00" endTime="2025-09-11T13:34:34.1576887-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1a379c91-195d-4a58-9e13-ebf2d72bdcc7" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="SeparationTests.MinimaTable_IsCorrect(leader: Heavy, follower: Medium, expectedNm: 5)" storage="c:\users\brand\source\repos\rtdb project\atc-lite\src\tests\bin\debug\net8.0\tests.dll" id="ff6333a2-eb1c-9c04-1e72-41f112ba5d6c">
+      <Execution id="94558c67-2378-482d-af55-80620cb082ed" />
+      <TestMethod codeBase="C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Tests\bin\Debug\net8.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeparationTests" name="MinimaTable_IsCorrect" />
+    </UnitTest>
+    <UnitTest name="SeparationTests.MinimaTable_IsCorrect(leader: Medium, follower: Medium, expectedNm: 3)" storage="c:\users\brand\source\repos\rtdb project\atc-lite\src\tests\bin\debug\net8.0\tests.dll" id="2a230cab-0313-ffee-c46e-9db819865322">
+      <Execution id="1a379c91-195d-4a58-9e13-ebf2d72bdcc7" />
+      <TestMethod codeBase="C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Tests\bin\Debug\net8.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeparationTests" name="MinimaTable_IsCorrect" />
+    </UnitTest>
+    <UnitTest name="StateEndpointTests.State_Returns_Empty_By_Default" storage="c:\users\brand\source\repos\rtdb project\atc-lite\src\tests\bin\debug\net8.0\tests.dll" id="085d651a-9277-5430-04fb-503b0a462533">
+      <Execution id="9bdd3b42-9b10-4679-8707-70d033c45c07" />
+      <TestMethod codeBase="C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Tests\bin\Debug\net8.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="StateEndpointTests" name="State_Returns_Empty_By_Default" />
+    </UnitTest>
+    <UnitTest name="SeparationTests.MinimaTable_IsCorrect(leader: Heavy, follower: Heavy, expectedNm: 4)" storage="c:\users\brand\source\repos\rtdb project\atc-lite\src\tests\bin\debug\net8.0\tests.dll" id="5a00afc5-163b-8be7-d4c7-07d5e41f9d1a">
+      <Execution id="caf93a07-56ae-44d4-a77c-b8e221fdc1d9" />
+      <TestMethod codeBase="C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Tests\bin\Debug\net8.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeparationTests" name="MinimaTable_IsCorrect" />
+    </UnitTest>
+    <UnitTest name="SeparationTests.MinimaTable_IsCorrect(leader: Heavy, follower: Light, expectedNm: 6)" storage="c:\users\brand\source\repos\rtdb project\atc-lite\src\tests\bin\debug\net8.0\tests.dll" id="3846ff06-6f86-15ae-3484-f8d935ce8b8e">
+      <Execution id="6da2d5b1-872f-42b7-a98a-78e960ff30ce" />
+      <TestMethod codeBase="C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Tests\bin\Debug\net8.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeparationTests" name="MinimaTable_IsCorrect" />
+    </UnitTest>
+    <UnitTest name="SeparationTests.MinimaTable_IsCorrect(leader: Medium, follower: Light, expectedNm: 5)" storage="c:\users\brand\source\repos\rtdb project\atc-lite\src\tests\bin\debug\net8.0\tests.dll" id="e0a3d6df-8d82-1082-c255-c2bdc547c399">
+      <Execution id="0f613e8a-b276-4af4-8b69-008aa76c57d6" />
+      <TestMethod codeBase="C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Tests\bin\Debug\net8.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeparationTests" name="MinimaTable_IsCorrect" />
+    </UnitTest>
+    <UnitTest name="SeparationTests.MinimaTable_IsCorrect(leader: Light, follower: Light, expectedNm: 3)" storage="c:\users\brand\source\repos\rtdb project\atc-lite\src\tests\bin\debug\net8.0\tests.dll" id="7edbec7d-2106-bd2c-7324-755da535f053">
+      <Execution id="36637e97-585b-4948-8a0e-9b21c84ea3d8" />
+      <TestMethod codeBase="C:\Users\brand\source\repos\RTDB Project\atc-lite\src\Tests\bin\Debug\net8.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeparationTests" name="MinimaTable_IsCorrect" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="ff6333a2-eb1c-9c04-1e72-41f112ba5d6c" executionId="94558c67-2378-482d-af55-80620cb082ed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5a00afc5-163b-8be7-d4c7-07d5e41f9d1a" executionId="caf93a07-56ae-44d4-a77c-b8e221fdc1d9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7edbec7d-2106-bd2c-7324-755da535f053" executionId="36637e97-585b-4948-8a0e-9b21c84ea3d8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e0a3d6df-8d82-1082-c255-c2bdc547c399" executionId="0f613e8a-b276-4af4-8b69-008aa76c57d6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="085d651a-9277-5430-04fb-503b0a462533" executionId="9bdd3b42-9b10-4679-8707-70d033c45c07" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3846ff06-6f86-15ae-3484-f8d935ce8b8e" executionId="6da2d5b1-872f-42b7-a98a-78e960ff30ce" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2a230cab-0313-ffee-c46e-9db819865322" executionId="1a379c91-195d-4a58-9e13-ebf2d72bdcc7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="7" executed="7" passed="7" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.5.6+bf9b858c26 (64-bit .NET 8.0.20)&#xD;
+[xUnit.net 00:00:00.10]   Discovering: Tests&#xD;
+[xUnit.net 00:00:00.24]   Discovered:  Tests&#xD;
+[xUnit.net 00:00:00.24]   Starting:    Tests&#xD;
+[xUnit.net 00:00:00.37]   Finished:    Tests&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

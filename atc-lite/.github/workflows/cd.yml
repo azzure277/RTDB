@@ -1,0 +1,50 @@
+name: CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  docker-build-push-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push API image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./atc-lite
+          file: ./atc-lite/Dockerfile.api
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/atc-lite-api:latest
+      - name: Build and push Processor image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./atc-lite
+          file: ./atc-lite/Dockerfile.processor
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/atc-lite-processor:latest
+      - name: Build and push Tower.Web image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./atc-lite/src/Tower.Web
+          file: ./atc-lite/src/Tower.Web/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/atc-lite-towerweb:latest
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Deploy to Azure Container Apps
+        uses: azure/CLI@v2
+        with:
+          inlineScript: |
+            az containerapp update --name atc-lite-api --resource-group ${{ secrets.AZURE_RG }} --image ${{ secrets.DOCKERHUB_USERNAME }}/atc-lite-api:latest --set-env-vars Auth__TenantId=${{ secrets.AZURE_TENANT_ID }} Auth__Audience=${{ secrets.API_CLIENT_ID }}
+            az containerapp update --name atc-lite-processor --resource-group ${{ secrets.AZURE_RG }} --image ${{ secrets.DOCKERHUB_USERNAME }}/atc-lite-processor:latest
+            az containerapp update --name atc-lite-towerweb --resource-group ${{ secrets.AZURE_RG }} --image ${{ secrets.DOCKERHUB_USERNAME }}/atc-lite-towerweb:latest --set-env-vars Auth__TenantId=${{ secrets.AZURE_TENANT_ID }} Auth__Audience=${{ secrets.API_CLIENT_ID }}
