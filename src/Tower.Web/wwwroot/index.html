@@ -29,7 +29,7 @@
 <script src="/signalr-client.js"></script>
 <script>
 async function tick(){
-  const r = await fetch('/api/state');
+  const r = await fetch('/api/state?airport=KSFO');
   const j = await r.json();
   document.getElementById('airport').textContent = j.airport + ' @ ' + new Date(j.tsUtc).toLocaleTimeString();
   const seq = document.getElementById('seq'); seq.innerHTML = '';
@@ -37,7 +37,7 @@ async function tick(){
   const rows = document.getElementById('rows'); rows.innerHTML = '';
   j.positions.sort((a,b)=>a.DistNm - b.DistNm).forEach(p=>{
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${p.Flight}</td><td>${p.Icao24}</td><td>${p.DistNm?.toFixed(2) ?? ''}</td><td>${p.AltFt}</td><td>${p.GsKt}</td><td>${p.FuelKg}</td><td>${p.Lat.toFixed(4)}</td><td>${p.Lon.toFixed(4)}</td>`;
+    tr.innerHTML = `<td>${p.id}</td><td>${p.icao}</td><td>${p.DistNm?.toFixed(2) ?? ''}</td><td>${p.altFt}</td><td>${p.gsKt}</td><td>${p.FuelKg}</td><td>${p.lat.toFixed(4)}</td><td>${p.lon.toFixed(4)}</td>`;
     rows.appendChild(tr);
   });
 }
